@@ -6,7 +6,7 @@ import {
 import { Button, Col, Menu, Popover, Row, Select } from 'antd';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
-import logo from '../assets/logo.svg';
+import logo from '../assets/TRADE_Logo.png';
 import styled from 'styled-components';
 import { useWallet } from '../utils/wallet';
 import { ENDPOINTS, useConnectionConfig } from '../utils/connection';
@@ -142,7 +142,7 @@ export default function TopBar() {
       <Wrapper>
         <LogoWrapper onClick={() => history.push(tradePageUrl)}>
           <img src={logo} alt="" />
-          {'SERUM'}
+          {'TRADE'}
         </LogoWrapper>
         <Menu
           mode="horizontal"
@@ -157,7 +157,7 @@ export default function TopBar() {
           }}
         >
           <Menu.Item key={tradePageUrl} style={{ margin: '0 10px 0 20px' }}>
-            TRADE
+            CLASSIC
           </Menu.Item>
           {!searchFocussed && (
             <Menu.Item key="/swap" style={{ margin: '0 10px' }}>
@@ -166,33 +166,33 @@ export default function TopBar() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                SWAP
+                3D
               </a>
             </Menu.Item>
           )}
           {connected && (!searchFocussed || location.pathname === '/balances') && (
             <Menu.Item key="/balances" style={{ margin: '0 10px' }}>
-              BALANCES
+              MARKETMAKING
             </Menu.Item>
           )}
           {connected && (!searchFocussed || location.pathname === '/orders') && (
             <Menu.Item key="/orders" style={{ margin: '0 10px' }}>
-              ORDERS
+              NFT
             </Menu.Item>
           )}
           {connected && (!searchFocussed || location.pathname === '/convert') && (
             <Menu.Item key="/convert" style={{ margin: '0 10px' }}>
-              CONVERT
+              AUTOTRADE
             </Menu.Item>
           )}
           {(!searchFocussed || location.pathname === '/list-new-market') && (
             <Menu.Item key="/list-new-market" style={{ margin: '0 10px' }}>
-              ADD MARKET
+              NFT
             </Menu.Item>
           )}
           {!searchFocussed && (
             <Menu.SubMenu
-              title="LEARN"
+              title="BOT"
               onTitleClick={() =>
                 window.open(EXTERNAL_LINKS['/learn'], '_blank')
               }
