@@ -53,6 +53,9 @@
     "prettier": "prettier --write src"
   },
   "eslintConfig": {
+    "rules": {
+      "no-unused-expressions": "off"
+  },
     "extends": "react-app"
   },
   "jest": {
